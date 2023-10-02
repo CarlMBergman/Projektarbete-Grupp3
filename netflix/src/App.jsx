@@ -5,6 +5,7 @@ import FilmView from "./views/FilmView/FilmView";
 import Favourites from "./views/Favourites/Favourites";
 import Categories from "./views/Categories/Categories";
 import "./App.css";
+import HomePage from "./components/Home/HomePage";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ function App() {
   return (
     <div className="App">
       <RouterProvider router={router} />
+      <HomePage />
     </div>
   );
 }
