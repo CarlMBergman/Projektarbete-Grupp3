@@ -1,0 +1,37 @@
+.filmView {
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+ 
+    
+}
+
+.filmView__article-left {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-row: auto;
+    margin-top: 4rem;
+    gap: 1.5rem;
+   
+}
+
+.filmView__article-right {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+grid-row: auto;
+margin-top: 4rem;
+gap: 1.5rem;
+
+}
+
+.ptag {
+
+    width: 60%;
+
+}
