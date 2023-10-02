@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import "./homePage.css";
+
 import movies from "/src/movies.json";
 
 export default function HomePage() {
