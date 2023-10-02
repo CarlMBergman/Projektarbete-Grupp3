@@ -1,0 +1,32 @@
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    background-color: #CD0404;
+    width: 100vw;
+    height: 10rem;
+}
+
+.header__heading {
+    font-size: 64px;
+    cursor: default;
+}
+
+.header__burger {
+    height: 50px;
+    cursor: pointer;
+}
+
+.header__search {
+    border: none;
+    text-align: end;
+    padding-right: 8px;
+    height: 48px;
+    border-radius: 40px;
+    background-color: #A49A9A;
+}
+
+.header__search::placeholder {
+    color: white;
+}
