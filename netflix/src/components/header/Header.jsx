@@ -17,7 +17,7 @@ function Header() {
     return (
         <header className="header">
             <div>
-                <img src={ burgerMenu } alt="burgermenu" className='header__burger' onClick={() => setShowNav(current => !current)}/>
+                <img src={ burgerMenu } alt="burgermenu" className='header__burger' onClick={() => setShowNav(current => !current)} data-testid="burger"/>
                 {showNav && <Nav/>}
             </div>
             <h1 className="header__heading">Nettan</h1>
