@@ -17,6 +17,8 @@ export default function HomePage() {
     console.log(trendingMovies);
   }, []);
 
+  //test
+
   return (
     <div>
       <h2>Trending Movies</h2>
