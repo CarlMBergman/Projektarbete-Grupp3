@@ -1,6 +1,7 @@
 import './Header.css'
 import { useState } from 'react'
 import burgerMenu from '../../assets/burger.svg'
+import searchImg from '../../assets/searchGlass.svg'
 import movies from '../../movies.json'
 import SearchDrop from './SearchDrop/SearchDrop'
 import Nav from './Nav/Nav'
@@ -25,6 +26,7 @@ function Header() {
             <div className='header__search'>
                 <input className="header__search--input" type="text" placeholder='search...' onChange={ e => setSearchInput(e.target.value)}/>
                 {(searchedMovies.length > 0 && searchInput)  && <SearchDrop movies={ searchedMovies }/>}
+                <img className="header__search--input--magnifying-glass" src={ searchImg } alt="magnifying glass" />
             </div>
         </header>
     )
