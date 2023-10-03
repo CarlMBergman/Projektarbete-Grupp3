@@ -3,13 +3,11 @@ import "./FavouriteCard.css"
 function FavouriteCard() {
     return (
         <div>
-            <section>
-                <article className="favourite_article">test</article>
-                <article className="favourite_article"></article>
-                <article className="favourite_article"></article>
-                <article className="favourite_article"></article>
-                <article className="favourite_article"></article>
-            </section>
+            <article className="favourite_article">
+                <img src="" alt="" />
+                <h3>Movie Title</h3>
+                <p>Description</p>
+            </article>
         </div>
     )
 }
