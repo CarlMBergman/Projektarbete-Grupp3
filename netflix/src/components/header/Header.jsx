@@ -21,6 +21,7 @@ function Header() {
                 {showNav && <Nav/>}
             </div>
             <h1 className="header__heading">Nettan</h1>
+            <h1 className="header__heading--small">N</h1>
             <div className='header__search'>
                 <input className="header__search--input" type="text" placeholder='search...' onChange={ e => setSearchInput(e.target.value)}/>
                 {(searchedMovies.length > 0 && searchInput)  && <SearchDrop movies={ searchedMovies }/>}
