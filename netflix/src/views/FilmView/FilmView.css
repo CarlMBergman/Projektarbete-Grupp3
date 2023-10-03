@@ -1,14 +1,13 @@
 .filmView {
-
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: auto;
- 
-    
+    background-color: #8A0404;
+
+   
 }
 
 .filmView__article-left {
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,6 +15,7 @@
     grid-row: auto;
     margin-top: 4rem;
     gap: 1.5rem;
+    border: 2px solid black;
    
 }
 
@@ -27,11 +27,94 @@ justify-content: center;
 grid-row: auto;
 margin-top: 4rem;
 gap: 1.5rem;
+grid-auto-rows: max-content;
+border: 2px solid black;
+
+} 
+ 
+.filmView__article-left,
+.filmView__article-right {
+  margin: 1rem;
+}
+
+.filmView__article-left-heading {
+
+font-weight: 800;
+font-size: 24px;
+color: #FFFFFF;
 
 }
 
-.ptag {
 
-    width: 60%;
+
+
+.filmView h3 {
+
+color:#FFFFFF;
+
 
 }
+
+.actors {
+  text-align: center; 
+  margin: 0 auto; 
+ 
+}
+
+.synopsis {
+  color:#FFFFFF;
+    width: 75%;
+
+}
+
+.filmView__article-right-button {
+
+  font-family: monospace;
+  font-size: 1rem;
+  color: #FAFAFA;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 10px;
+  border: 2px solid #FAFAFA;
+  background: #252525;
+  box-shadow: 3px 3px #fafafa;
+  cursor: pointer;
+  margin: 35px 0;
+
+}
+
+.filmView__article-right-button:active {
+
+  box-shadow: none;
+  transform: translate(3px, 3px);
+
+}
+
+
+
+@media (max-width: 640px) {
+    .filmView {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+    }
+  
+    .filmView__article-left,
+    .filmView__article-right {
+      width: 100%;
+      max-width: 500px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-self: center;
+    }
+  }
+
+
+
+
+
+
