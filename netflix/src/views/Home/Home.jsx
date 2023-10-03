@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom"
+import Header from "../../components/header/Header";
 
 function Home() {
 
@@ -16,9 +17,7 @@ function Home() {
 
     return(
         <div>   
-            <header>
-                <h1>Title</h1>
-            </header>
+            <Header/>
             <main>
                 <aside>
                     <button onClick={ clickCat }>Categories</button>
