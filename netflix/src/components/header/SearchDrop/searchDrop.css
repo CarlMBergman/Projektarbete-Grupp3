@@ -1,10 +1,26 @@
 .search--drop {
     position: absolute;
-    top: 110px;
-    right: 8px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    top: 60px;
+    right: 0px;
     padding: 1rem;
     background-color: black;
     color: white;
     max-height: 200px;
-    width: 150px;
+    width: 300px;
+    overflow: auto;
+    border-radius: 10px;
+}
+
+.search--drop::-webkit-scrollbar {
+    background-color: black;
+    border-radius: 0 50px 50px 0;
+}
+
+.search--drop::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 50px;
 }

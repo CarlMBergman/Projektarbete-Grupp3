@@ -5,7 +5,6 @@ import FilmView from './views/FilmView/FilmView'
 import Favourites from './views/Favourites/Favourites'
 import Categories from './views/Categories/Categories'
 import './App.css'
-import Header from './components/header/Header'
 
 const router = createBrowserRouter([
 
@@ -37,7 +36,6 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
       <RouterProvider router= { router } />
     </div>
   )

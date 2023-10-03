@@ -19,6 +19,10 @@
 }
 
 .header__search {
+    position: relative;
+}
+
+.header__search--input {
     border: none;
     text-align: end;
     padding-right: 8px;
