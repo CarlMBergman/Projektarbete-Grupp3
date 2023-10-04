@@ -3,7 +3,7 @@
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: auto;
     background-color: #8A0404;
-
+  
    
 }
 
@@ -16,7 +16,7 @@
     margin-top: 4rem;
     gap: 1.5rem;
     border: 2px solid black;
-   
+    
 }
 
 .filmView__article-right {
@@ -42,9 +42,10 @@ border: 2px solid black;
 font-weight: 800;
 font-size: 24px;
 color: #FFFFFF;
+text-align: center;
+
 
 }
-
 
 
 

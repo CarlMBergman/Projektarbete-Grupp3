@@ -1,4 +1,4 @@
-import FilmView from "./views/FilmView/FilmView";
+import FilmView from "../views/FilmView/FilmView";
 import { render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
@@ -9,7 +9,6 @@ import userEvent from '@testing-library/user-event';
 /* test('Renderar FilmView korrekt', () => {
     const { getByText } = render(<FilmView />);
     
-    // Sätt upp dina tester här
     const headingElement = getByText(/The Shawshank Redemption/i);
     expect(headingElement).toBeInTheDocument();
     
@@ -56,7 +55,7 @@ it('should adds film to favorites when "Add to favorite" button is clicked', asy
 
     // Använd waitFor för att avvakta att meddelandet visas
     await waitFor(() => {
-      expect(screen.getByText(/This film is in your favorites/i)).toBeInTheDocument();
+      expect(screen.getByText(/Added to favorite/i)).toBeInTheDocument();
     });
   });
 
@@ -65,6 +64,6 @@ it('should not display "This film is in your favorites" initially', () => {
     const { queryByText } = render(<FilmView />);
 
     // Kontrollera att meddelandet inte finns initialt
-    expect(queryByText('This film is in your favorites')).toBeNull();
+    expect(queryByText('Added to favorite')).toBeNull();
   });
 
