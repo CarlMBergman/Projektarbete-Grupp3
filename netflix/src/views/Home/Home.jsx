@@ -30,6 +30,7 @@ function Home() {
       //Här används siffrorna (filmer) som vi plockade fram för att hämta en film från recommendedMovies array
       const recommendedMovies = recommended[randomMovieIndex];
 
+      //Vi uppdaterar vår recommended array efter varje loop, för att inte rendera samma film flera gånger
       recommended.splice(randomMovieIndex, 1);
 
       //Pushar alla våra recommended filmer till randomMovies array
@@ -73,7 +74,14 @@ function Home() {
           {trendingMovies.map((movie) => {
             return (
               <article key={movie.title}>
-                <img onClick={() => clickFilm(movie)} src={movie.thumbnail} />
+                <img
+                  onClick={() => clickFilm(movie)}
+                  src={movie.thumbnail}
+                  onError={({ currentTarget }) => {
+                    currentTarget.onerror = null;
+                    currentTarget.src = "./public/error.jpg";
+                  }}
+                />
                 <p>Relaste date: {movie.year}</p>
                 <p>Rating: {movie.rating}</p>
                 <h2>{movie.title}</h2>
@@ -85,13 +93,18 @@ function Home() {
           {recommendedMovies.map((movie, index) => {
             return (
               <article key={index}>
-                <img onClick={() => clickFilm(movie)} src={movie.thumbnail} />
+                <img
+                  onClick={() => clickFilm(movie)}
+                  src={movie.thumbnail}
+                  onError={({ currentTarget }) => {
+                    currentTarget.onerror = null;
+                    currentTarget.src = "./public/error.jpg";
+                  }}
+                />
                 <p>Relaste date: {movie.year}</p>
                 <p>Rating: {movie.rating}</p>
                 <h2>{movie.title}</h2>
                 <button onClick={() => FavoriteBtn(movie)}>Save Movie</button>
-
-                {/*<button onClick={() => saveMovies(movie)}>Save movie</button> */}
               </article>
             );
           })}
