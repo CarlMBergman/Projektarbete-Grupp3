@@ -29,8 +29,12 @@ function Home() {
       const randomMovieIndex = Math.floor(Math.random() * recommended.length);
       //Här används siffrorna (filmer) som vi plockade fram för att hämta en film från recommendedMovies array
       const recommendedMovies = recommended[randomMovieIndex];
+
+      recommended.splice(randomMovieIndex, 1);
+
       //Pushar alla våra recommended filmer till randomMovies array
       randomMovies.push(recommendedMovies);
+
       //console.log(randomMovies);
     }
     //Uppdaterar recommendedMovies state
