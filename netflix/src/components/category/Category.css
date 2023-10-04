@@ -1,17 +1,19 @@
-
 .category{
     display: flex;
-    flex-direction: row;
-    height: 10rem;
-    width: auto;
+    flex-direction: column;
+    height: 20rem;
+    width: 15rem;
     background-color: beige;
     justify-content: space-between;
     align-items: center;
+    margin: .5rem;
+    padding: .5rem;
+    text-align: center;
 }
 
 .category__article{
-    height: 8rem;
-    width: 7rem;
+    height: 10rem;
+    width: 8.5rem;
     background-color: aquamarine;
     margin: 1rem;
 }
@@ -19,4 +21,9 @@
 .category__article__img{
     height: 8rem;
     width: 7rem;
+}
+
+.hj{
+    display: flex;
+    flex-wrap: wrap;
 }

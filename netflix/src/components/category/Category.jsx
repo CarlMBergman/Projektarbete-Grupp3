@@ -2,7 +2,7 @@ import './Category.css';
 import { useState, useEffect } from 'react';
 import movies from '/src/movies.json';
 
-function Category() {
+function Category(props) {
     const [movieGenre, setMovieGenre] = useState([])
 
     function filterCategories() {
@@ -16,9 +16,14 @@ function Category() {
         console.log(movieGenre);
     }, [])
 
+    const movie = props.movies.map((movie) => {
+        return <p>{movie.title}</p>
+    })
+
     return (
         <div>
-            <h1>Categories</h1>
+            {movie}
+            {/* <h1>Categories</h1>
             {movieGenre.map((movie) => {
                 return(
             
@@ -32,7 +37,7 @@ function Category() {
                 </article>
             </section>
             )
-            })}
+            })} */}
         </div>
     )
 }
