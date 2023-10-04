@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import "./Home.css";
 import movies from "/src/movies.json";
 import Header from "../../components/header/Header";
+import FavoriteBtn from "../../components/favoriteBtn";
 
 function Home() {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -28,8 +29,12 @@ function Home() {
       const randomMovieIndex = Math.floor(Math.random() * recommended.length);
       //Här används siffrorna (filmer) som vi plockade fram för att hämta en film från recommendedMovies array
       const recommendedMovies = recommended[randomMovieIndex];
+
+      recommended.splice(randomMovieIndex, 1);
+
       //Pushar alla våra recommended filmer till randomMovies array
       randomMovies.push(recommendedMovies);
+
       //console.log(randomMovies);
     }
     //Uppdaterar recommendedMovies state
@@ -55,29 +60,24 @@ function Home() {
   function clickFav() {
     navigate("/Favourites");
   }
-  function clickFilm() {
-    navigate("/FilmView");
+  function clickFilm(movie) {
+    navigate("/FilmView", { state: movie });
   }
 
   return (
     <div>
       <Header />
       <main>
-        <aside>
-          <button onClick={clickCat}>Categories</button>
-          <button onClick={clickFav}>Favourites</button>
-          <button onClick={clickFilm}>FilmView</button>
-        </aside>
         <div>
           <h2>Trending Movies</h2>
           {trendingMovies.map((movie) => {
             return (
               <article key={movie.title}>
-                <img src={movie.thumbnail} />
+                <img onClick={() => clickFilm(movie)} src={movie.thumbnail} />
                 <p>Relaste date: {movie.year}</p>
                 <p>Rating: {movie.rating}</p>
                 <h2>{movie.title}</h2>
-                <button onClick={() => saveMovies(movie)}>Save movie</button>
+                <button onClick={() => FavoriteBtn(movie)}>Save Movie</button>
               </article>
             );
           })}
@@ -85,11 +85,13 @@ function Home() {
           {recommendedMovies.map((movie, index) => {
             return (
               <article key={index}>
-                <img src={movie.thumbnail} />
+                <img onClick={() => clickFilm(movie)} src={movie.thumbnail} />
                 <p>Relaste date: {movie.year}</p>
                 <p>Rating: {movie.rating}</p>
                 <h2>{movie.title}</h2>
-                <button onClick={() => saveMovies(movie)}>Save movie</button>
+                <button onClick={() => FavoriteBtn(movie)}>Save Movie</button>
+
+                {/*<button onClick={() => saveMovies(movie)}>Save movie</button> */}
               </article>
             );
           })}
