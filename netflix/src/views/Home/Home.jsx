@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./Home.css";
 import movies from "/src/movies.json";
+import Header from "../../components/header/Header";
 
 function Home() {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -60,9 +61,7 @@ function Home() {
 
   return (
     <div>
-      <header>
-        <h1>Title</h1>
-      </header>
+      <Header />
       <main>
         <aside>
           <button onClick={clickCat}>Categories</button>

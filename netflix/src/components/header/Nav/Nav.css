@@ -1,0 +1,32 @@
+.nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    width: 200px;
+    height: 300px;
+    top: 116px;
+    left: 30px;
+    border-radius: 10px;
+}
+
+.nav__btn {
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-bottom: 1px solid white;
+    width: 100px;
+    padding: 2rem 0 2rem 0;
+    transition: all .2s ease-in-out; 
+}
+
+.nav__btn:nth-last-child(1) {
+    border-bottom: none;
+}
+
+.nav__btn:hover {
+    transform: scale(1.1); 
+}
