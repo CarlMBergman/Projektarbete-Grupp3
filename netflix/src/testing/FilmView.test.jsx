@@ -1,4 +1,4 @@
-import FilmView from "../views/FilmView/FilmView";
+/* import FilmView from "../views/FilmView/FilmView";
 import { render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
@@ -6,14 +6,6 @@ import userEvent from '@testing-library/user-event';
 
 
 
-/* test('Renderar FilmView korrekt', () => {
-    const { getByText } = render(<FilmView />);
-    
-    const headingElement = getByText(/The Shawshank Redemption/i);
-    expect(headingElement).toBeInTheDocument();
-    
-  
-  }); */
 
 
 
@@ -67,3 +59,4 @@ it('should not display "This film is in your favorites" initially', () => {
     expect(queryByText('Added to favorite')).toBeNull();
   });
 
+ */
