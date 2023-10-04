@@ -5,6 +5,10 @@ import movies from "/src/movies.json";
 import Header from "../../components/header/Header";
 import FavoriteBtn from "../../components/favoriteBtn";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
 function Home() {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [recommendedMovies, setRecommendedMovies] = useState([]);
@@ -47,6 +51,33 @@ function Home() {
     console.log(sessionStorage);
   }
 
+  //Slick carousel inställningar
+  const settings = {
+    centerMode: true,
+    centerPadding: "60px",
+    slidesToShow: 3,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: true,
+          centerMode: true,
+          centerPadding: "40px",
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: true,
+          centerMode: true,
+          centerPadding: "40px",
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   useEffect(() => {
     filterTrendingMovies();
     filterRecommendedMovies();
@@ -71,43 +102,47 @@ function Home() {
       <main>
         <div>
           <h2>Trending Movies</h2>
-          {trendingMovies.map((movie) => {
-            return (
-              <article key={movie.title}>
-                <img
-                  onClick={() => clickFilm(movie)}
-                  src={movie.thumbnail}
-                  onError={({ currentTarget }) => {
-                    currentTarget.onerror = null;
-                    currentTarget.src = "./public/error.jpg";
-                  }}
-                />
-                <p>Relaste date: {movie.year}</p>
-                <p>Rating: {movie.rating}</p>
-                <h2>{movie.title}</h2>
-                <button onClick={() => FavoriteBtn(movie)}>Save Movie</button>
-              </article>
-            );
-          })}
+          <Slider {...settings}>
+            {trendingMovies.map((movie) => {
+              return (
+                <article key={movie.title}>
+                  <img
+                    onClick={() => clickFilm(movie)}
+                    src={movie.thumbnail}
+                    onError={({ currentTarget }) => {
+                      currentTarget.onerror = null;
+                      currentTarget.src = "./public/error.jpg";
+                    }}
+                  />
+                  <p>Relaste date: {movie.year}</p>
+                  <p>Rating: {movie.rating}</p>
+                  <h2>{movie.title}</h2>
+                  <button onClick={() => FavoriteBtn(movie)}>Save Movie</button>
+                </article>
+              );
+            })}
+          </Slider>
           <h2>Recommended for you</h2>
-          {recommendedMovies.map((movie, index) => {
-            return (
-              <article key={index}>
-                <img
-                  onClick={() => clickFilm(movie)}
-                  src={movie.thumbnail}
-                  onError={({ currentTarget }) => {
-                    currentTarget.onerror = null;
-                    currentTarget.src = "./public/error.jpg";
-                  }}
-                />
-                <p>Relaste date: {movie.year}</p>
-                <p>Rating: {movie.rating}</p>
-                <h2>{movie.title}</h2>
-                <button onClick={() => FavoriteBtn(movie)}>Save Movie</button>
-              </article>
-            );
-          })}
+          <Slider {...settings}>
+            {recommendedMovies.map((movie, index) => {
+              return (
+                <article key={index}>
+                  <img
+                    onClick={() => clickFilm(movie)}
+                    src={movie.thumbnail}
+                    onError={({ currentTarget }) => {
+                      currentTarget.onerror = null;
+                      currentTarget.src = "./public/error.jpg";
+                    }}
+                  />
+                  <p>Relaste date: {movie.year}</p>
+                  <p>Rating: {movie.rating}</p>
+                  <h2>{movie.title}</h2>
+                  <button onClick={() => FavoriteBtn(movie)}>Save Movie</button>
+                </article>
+              );
+            })}
+          </Slider>
         </div>
       </main>
     </div>
