@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import "./Home.css";
 import movies from "/src/movies.json";
 import Header from "../../components/header/Header";
+import FavoriteBtn from "../../components/favoriteBtn";
 
 function Home() {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -63,11 +64,6 @@ function Home() {
     <div>
       <Header />
       <main>
-        <aside>
-          <button onClick={clickCat}>Categories</button>
-          <button onClick={clickFav}>Favourites</button>
-          <button onClick={clickFilm}>FilmView</button>
-        </aside>
         <div>
           <h2>Trending Movies</h2>
           {trendingMovies.map((movie) => {
@@ -77,7 +73,7 @@ function Home() {
                 <p>Relaste date: {movie.year}</p>
                 <p>Rating: {movie.rating}</p>
                 <h2>{movie.title}</h2>
-                <button onClick={() => saveMovies(movie)}>Save movie</button>
+                <button onClick={() => FavoriteBtn(movie)}>Save Movie</button>
               </article>
             );
           })}
@@ -89,7 +85,9 @@ function Home() {
                 <p>Relaste date: {movie.year}</p>
                 <p>Rating: {movie.rating}</p>
                 <h2>{movie.title}</h2>
-                <button onClick={() => saveMovies(movie)}>Save movie</button>
+                <button onClick={() => FavoriteBtn(movie)}>Save Movie</button>
+
+                {/*<button onClick={() => saveMovies(movie)}>Save movie</button> */}
               </article>
             );
           })}
