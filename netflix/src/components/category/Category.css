@@ -1,0 +1,22 @@
+
+.category{
+    display: flex;
+    flex-direction: row;
+    height: 10rem;
+    width: auto;
+    background-color: beige;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category__article{
+    height: 8rem;
+    width: 7rem;
+    background-color: aquamarine;
+    margin: 1rem;
+}
+
+.category__article__img{
+    height: 8rem;
+    width: 7rem;
+}
