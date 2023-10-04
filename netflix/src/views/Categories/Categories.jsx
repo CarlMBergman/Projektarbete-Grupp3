@@ -1,14 +1,15 @@
-
-
+import './Categories.css'
+import { Category } from '../../components/category/Category'
+import Header from '../../components/header/Header'
 
 function Categories() {
     return(
         <div>
             <header>
-                <h1>Navbar</h1>
+                < Header/>  
             </header>
-            <main>
-                
+            <main className="categories">
+                <Category />
             </main>
         </div>
     )
