@@ -55,8 +55,8 @@ function Home() {
   function clickFav() {
     navigate("/Favourites");
   }
-  function clickFilm() {
-    navigate("/FilmView");
+  function clickFilm(movie) {
+    navigate("/FilmView", { state: movie });
   }
 
   return (
@@ -73,7 +73,7 @@ function Home() {
           {trendingMovies.map((movie) => {
             return (
               <article key={movie.title}>
-                <img src={movie.thumbnail} />
+                <img onClick={() => clickFilm(movie)} src={movie.thumbnail} />
                 <p>Relaste date: {movie.year}</p>
                 <p>Rating: {movie.rating}</p>
                 <h2>{movie.title}</h2>
@@ -85,7 +85,7 @@ function Home() {
           {recommendedMovies.map((movie, index) => {
             return (
               <article key={index}>
-                <img src={movie.thumbnail} />
+                <img onClick={() => clickFilm(movie)} src={movie.thumbnail} />
                 <p>Relaste date: {movie.year}</p>
                 <p>Rating: {movie.rating}</p>
                 <h2>{movie.title}</h2>
