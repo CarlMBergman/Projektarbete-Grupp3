@@ -37,7 +37,7 @@ function Home() {
   }
 
   function saveMovies(movie) {
-    sessionStorage.setItem("savedMovies", movie);
+    sessionStorage.setItem("savedMovies", JSON.stringify(movie));
     console.log(sessionStorage);
   }
 
