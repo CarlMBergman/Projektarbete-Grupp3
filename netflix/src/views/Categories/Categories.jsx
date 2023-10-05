@@ -4,7 +4,7 @@ import Header from '../../components/header/Header'
 import movies from '../../movies.json'
 
 function Categories() {
-    const comma = ','
+    const comma = ', '
     // Set() makes it so no dupllicates will be added but it
     // is an object so will have to convert it further down
     const genres = new Set()
@@ -12,8 +12,7 @@ function Categories() {
 
     movies.map((movie) => {
         if (movie.genre.includes(comma)) {
-            const noSpaces = movie.genre.replace(/\s/g, '')
-            const splitGenres = noSpaces.split(comma)
+            const splitGenres = movie.genre.split(comma)
             splitGenres.forEach((genre) => {
                 genres.add(genre)
             })
