@@ -31,7 +31,7 @@ function Category(props) {
     })
 
     return (
-        <div>
+        <div className='category__div'>
             {movie}
             {/* <h1>Categories</h1>
             {movieGenre.map((movie) => {

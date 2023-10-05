@@ -1,5 +1,14 @@
 .categories{     
     display: flex;     
-    flex-direction: row; 
+    flex-direction: column; 
     background-color: #8A0404;
+}
+
+.div--genre{
+    display: flex;
+    flex-direction: row;
+}
+
+.div--genre__header{
+
 }
