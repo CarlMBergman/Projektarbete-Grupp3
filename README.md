@@ -1,6 +1,6 @@
 ﻿# Projektarbete-Grupp3
 
- how to name classes
+ how to name classes BEM style
 
 nav className="header"
         button className="header__burger"button
