@@ -4,48 +4,32 @@ import Header from '../../components/header/Header'
 import movies from '../../movies.json'
 
 function Categories() {
-    let genres = []
     const comma = ','
+    // Set() makes it so no dupllicates will be added but it
+    // is an object so will have to convert it further down
+    const genres = new Set()
+    
 
-    movies.forEach((movie) => {
+    movies.map((movie) => {
         if (movie.genre.includes(comma)) {
             const noSpaces = movie.genre.replace(/\s/g, '')
             const splitGenres = noSpaces.split(comma)
             splitGenres.forEach((genre) => {
-                if (genres) {
-                    const exist = genres.includes(genre)
-                    if (!exist) {
-                        genres = [...genres, genre]
-                    }
-                } else {
-                    genres = genre
-                }
+                genres.add(genre)
             })
-        } else {
-            const exist = genres.includes(movie.genre)
-            if (!exist) {
-                genres = [...genres, movie.genre]
-            }
+        } else  {
+            genres.add(movie.genre)
         }
     })
-
-    const category = genres.map((genre) => {
+    // here we convert the object in to an array so we can map it
+    const genresArray = [...genres]
+    
+    const category = genresArray.map((genre) => {
         let moviesWithSameGenre = []
         movies.forEach((movie) => {
-            if (movie.genre.includes(comma)) {
-                const noSpaces = movie.genre.replace(/\s/g, '')
-                const splitGenres = noSpaces.split(comma)
-                splitGenres.forEach((genreMovie) => {
-                    if (genreMovie === genre) {
-                        moviesWithSameGenre = [...moviesWithSameGenre, movie]
-                        
-                    }
-                })
-            } else {
-                if (genre === movie.genre) {
-                    moviesWithSameGenre = [...moviesWithSameGenre, movie]
-                }
-            }
+            if (movie.genre.includes(genre)) {
+                moviesWithSameGenre = [...moviesWithSameGenre, movie]
+            } 
         })
         
         return (
