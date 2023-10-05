@@ -17,7 +17,17 @@ function Category(props) {
     }, [])
 
     const movie = props.movies.map((movie) => {
-        return <p>{movie.title}</p>
+        return (
+            <div className="category">
+                <article className='category__article'>
+                    <img 
+                    src={movie.thumbnail} 
+                    onError={(e) => e.target.alt = 'Image does not exist'} 
+                    className='category__article__img'/>
+                </article>
+                <h3>{movie.title}</h3>
+            </div>
+        )
     })
 
     return (
