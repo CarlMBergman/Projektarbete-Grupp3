@@ -1,30 +1,34 @@
-import { useState } from "react";
-import FavouriteCard from "../../components/favourites/FavouriteCard.jsx"
-import Header from "../../components/header/Header.jsx"
+import React, { useState, useEffect } from "react";
+import FavouriteCard from "../../components/favourites/FavouriteCard.jsx";
+import Header from "../../components/header/Header.jsx";
 import "./Favourites.css"
 
-
 function Favourites() {
+    const [favouriteMovies, setFavouriteMovies] = useState([]);
 
-    const [favouriteCards, setFavouriteCards] = useState([]);
+    useEffect(() => {
+        function getMovies() {
+            let data = JSON.parse(sessionStorage.getItem("savedMovies"));
+            if (data !== null) {
+                setFavouriteMovies(data);
+            }
+        }
+        getMovies();
+    }, []);
 
-    const handleAddToFavorites = () => {
-        const newCard = <FavouriteCard key={favouriteCards.length} />;
-        setFavouriteCards([...favouriteCards, newCard]);
-    }
-
-    return(
+    return (
         <div>
-            <Header/>
+            <Header />
             <main>
                 <h4>Favourites</h4>
                 <section>
-                    {favouriteCards}
-                    <FavouriteCard/>
+                    {favouriteMovies.map((movie, index) => (
+                        <FavouriteCard key={index} movieData={movie} />
+                    ))}
                 </section>
             </main>
         </div>
     )
 }
 
-export default Favourites
+export default Favourites;
