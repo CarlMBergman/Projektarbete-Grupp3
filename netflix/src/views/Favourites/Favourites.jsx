@@ -9,12 +9,12 @@ function Favourites() {
     useEffect(() => {
         function getMovies() {
             let data = JSON.parse(sessionStorage.getItem("savedMovies"));
-            setFavouriteMovies(data)
+            if (data !== null) {
+                setFavouriteMovies(data);
+            }
         }
         getMovies();
     }, []);
-
-    console.log(favouriteMovies);
 
     return (
         <div>
