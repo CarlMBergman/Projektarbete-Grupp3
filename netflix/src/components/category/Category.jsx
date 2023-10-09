@@ -1,9 +1,11 @@
 import './Category.css';
 import { useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import movies from '/src/movies.json';
 
 function Category(props) {
     // const [movieGenre, setMovieGenre] = useState([])
+    const navigate = useNavigate();
 
     function filterCategories() {
         const category = movies.filter((movie) => movie.thumbnail);
@@ -23,12 +25,16 @@ function Category(props) {
                     <img 
                     src={movie.thumbnail} 
                     onError={(e) => e.target.alt = 'Image does not exist'} 
-                    className='category__article__img'/>
+                    className='category__article__img'
+                    onClick={clickFilm}/>
                 </article>
                 <h3>{movie.title}</h3>
             </div>
         )
     })
+    function clickFilm(movie) {
+        navigate("/Projektarbete-Grupp3/FilmView", { state: movie });
+      }
 
     return (
         <div className='category__div'>
