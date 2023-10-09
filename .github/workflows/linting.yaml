@@ -10,6 +10,9 @@ on: #this workflow runs on pull requests and pushes to main or master
 jobs:
   linting:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./netflix
     steps:
       - name: Checkout #checks out our current branch so this runner has the latest code
         uses: actions/checkout@v4 #uses means that it is a pre-defined action supplied by GitHub.
