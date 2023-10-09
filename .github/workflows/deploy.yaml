@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ../netflix
+        working-directory: /netflix
     permissions:
       contents: write
     steps:
