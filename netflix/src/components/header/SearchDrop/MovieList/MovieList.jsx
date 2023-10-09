@@ -6,7 +6,7 @@ function MovieList(props) {
     const navigate = useNavigate()
 
     function goToMovie() {
-        navigate('/FilmView', {state: movie})
+        navigate('/Projektarbete-Grupp3/FilmView', {state: movie})
     }
 
     return (
