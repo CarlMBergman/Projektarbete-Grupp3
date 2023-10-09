@@ -1,6 +1,6 @@
 import FilmView from "../views/FilmView/FilmView";
 import { render, screen, waitFor } from '@testing-library/react';
-import React from 'react';
+import { it, expect } from "vitest";
 import userEvent from '@testing-library/user-event';
 
 
