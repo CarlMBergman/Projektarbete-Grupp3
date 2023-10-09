@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import FilmView from "./views/FilmView/FilmView";
 import Favourites from "./views/Favourites/Favourites";

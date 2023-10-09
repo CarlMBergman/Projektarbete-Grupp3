@@ -1,6 +1,5 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
-import userEvent from '@testing-library/user-event'
 import Categories from "../views/Categories/Categories";
 import { BrowserRouter } from "react-router-dom";
 
@@ -21,4 +20,9 @@ describe('tests for categories', () => {
     it('should show Fight Club only one time', () => {
         expect(screen.getByText('Fight Club')).toBeInTheDocument()
     })
+
+    // it('should show first category to be drama', () => {
+
+    //     expect().toHaveTextContent('Drama')
+    // })
 })
