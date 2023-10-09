@@ -4,8 +4,7 @@ import Header from '../../components/header/Header'
 import { useLocation } from 'react-router-dom';
 import removeMovieByTitle from '../../components/RemoveFavoriteBtn';
 import FavoriteBtn from '../../components/FavoriteBtn';
-import Footer from '../../components/footer/Footer';
-
+import { BrowserRouter } from 'react-router-dom';
 
 function FilmView() {
 
