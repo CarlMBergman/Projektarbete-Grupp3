@@ -54,6 +54,8 @@ function Home() {
   //Slick carousel inställningar
   const settings = {
     centerMode: true,
+    dots: true,
+    arrows: true,
     centerPadding: "60px",
     slidesToShow: 3,
     responsive: [
@@ -101,48 +103,62 @@ function Home() {
       <Header />
       <main>
         <div>
-          <h2>Trending Movies</h2>
-          <Slider {...settings}>
-            {trendingMovies.map((movie) => {
-              return (
-                <article key={movie.title}>
-                  <img
-                    onClick={() => clickFilm(movie)}
-                    src={movie.thumbnail}
-                    onError={({ currentTarget }) => {
-                      currentTarget.onerror = null;
-                      currentTarget.src = "./public/error.jpg";
-                    }}
-                  />
-                  <p>Relaste date: {movie.year}</p>
-                  <p>Rating: {movie.rating}</p>
-                  <h2>{movie.title}</h2>
-                  <button onClick={() => FavoriteBtn(movie)}>Save Movie</button>
-                </article>
-              );
-            })}
-          </Slider>
-          <h2>Recommended for you</h2>
-          <Slider {...settings}>
-            {recommendedMovies.map((movie, index) => {
-              return (
-                <article key={index}>
-                  <img
-                    onClick={() => clickFilm(movie)}
-                    src={movie.thumbnail}
-                    onError={({ currentTarget }) => {
-                      currentTarget.onerror = null;
-                      currentTarget.src = "./public/error.jpg";
-                    }}
-                  />
-                  <p>Relaste date: {movie.year}</p>
-                  <p>Rating: {movie.rating}</p>
-                  <h2>{movie.title}</h2>
-                  <button onClick={() => FavoriteBtn(movie)}>Save Movie</button>
-                </article>
-              );
-            })}
-          </Slider>
+          <div className="trending__container">
+            <h2 className="trending__title">Trending Movies</h2>
+            <Slider {...settings}>
+              {trendingMovies.map((movie) => {
+                return (
+                  <article
+                    className="movie__card"
+                    key={movie.title}
+                    data-testid="movie-card"
+                  >
+                    <img
+                      className="img"
+                      onClick={() => clickFilm(movie)}
+                      src={movie.thumbnail}
+                      onError={({ currentTarget }) => {
+                        currentTarget.onerror = null;
+                        currentTarget.src = "./public/error.jpg";
+                      }}
+                    />
+                    <p className="release__year">Release year: {movie.year}</p>
+                    <p className="rating">Rating: {movie.rating}</p>
+                    <h2 className="movie__title">{movie.title}</h2>
+                    <button className="btn" onClick={() => FavoriteBtn(movie)}>
+                      Save Movie
+                    </button>
+                  </article>
+                );
+              })}
+            </Slider>
+          </div>
+          <div className="recommended__container">
+            <h2 className="recommended__title">Recommended for you</h2>
+            <Slider {...settings}>
+              {recommendedMovies.map((movie, index) => {
+                return (
+                  <article className="movie__card" key={index}>
+                    <img
+                      className="img"
+                      onClick={() => clickFilm(movie)}
+                      src={movie.thumbnail}
+                      onError={({ currentTarget }) => {
+                        currentTarget.onerror = null;
+                        currentTarget.src = "./public/error.jpg";
+                      }}
+                    />
+                    <p className="release__year">Release year: {movie.year}</p>
+                    <p className="rating">Rating: {movie.rating}</p>
+                    <h2 className="movie__title">{movie.title}</h2>
+                    <button className="btn" onClick={() => FavoriteBtn(movie)}>
+                      Save Movie
+                    </button>
+                  </article>
+                );
+              })}
+            </Slider>
+          </div>
         </div>
       </main>
     </div>
