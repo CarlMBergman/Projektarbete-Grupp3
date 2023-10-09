@@ -46,10 +46,10 @@ function Home() {
     setRecommendedMovies(randomMovies);
   }
 
-  function saveMovies(movie) {
-    sessionStorage.setItem("savedMovies", JSON.stringify(movie));
-    console.log(sessionStorage);
-  }
+  // function saveMovies(movie) {
+  //   sessionStorage.setItem("savedMovies", JSON.stringify(movie));
+  //   console.log(sessionStorage);
+  // }
 
   //Slick carousel inställningar
   const settings = {
@@ -86,12 +86,12 @@ function Home() {
   }, []);
 
   //Routes
-  function clickCat() {
-    navigate("/Projektarbete-Grupp3/Categories");
-  }
-  function clickFav() {
-    navigate("/Projektarbete-Grupp3/Favourites");
-  }
+  // function clickCat() {
+  //   navigate("/Projektarbete-Grupp3/Categories");
+  // }
+  // function clickFav() {
+  //   navigate("/Projektarbete-Grupp3/Favourites");
+  // }
   function clickFilm(movie) {
     navigate("/Projektarbete-Grupp3/FilmView", { state: movie });
   }

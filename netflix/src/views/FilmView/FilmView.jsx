@@ -1,5 +1,5 @@
 import './FilmView.css'
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import Header from '../../components/header/Header'
 import { useLocation } from 'react-router-dom';
 import removeMovieByTitle from '../../components/RemoveFavoriteBtn';
@@ -7,7 +7,7 @@ import FavoriteBtn from '../../components/FavoriteBtn';
 
 function FilmView() {
 
-  const [favouriteMovies, setFavouriteMovies] = useState([]);
+  // const [favouriteMovies, setFavouriteMovies] = useState([]);
   const location = useLocation()
   const movie = location.state
   console.log(movie);
@@ -19,7 +19,7 @@ function FilmView() {
        // Kontrollera om det finns sparade filmer och om listan inte är tom.
       if (data !== null && data.length > 0) {
          // Om det finns sparade filmer, uppdatera tillståndet (favouriteMovies) i komponenten med den sparade filmlistan.
-        setFavouriteMovies(data);
+        // setFavouriteMovies(data);
       }
     }
       // Anropa den inre funktionen getMovies för att hämta och uppdatera sparade filmer när komponenten renderas.
