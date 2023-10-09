@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "./Home.css";
 import movies from "/src/movies.json";
 import Header from "../../components/header/Header";
-import FavoriteBtn from "../../components/favoriteBtn";
+import FavoriteBtn from "../../components/favoriteBtn.jsx";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -87,13 +87,13 @@ function Home() {
 
   //Routes
   function clickCat() {
-    navigate("/Categories");
+    navigate("/Projektarbete-Grupp3/Categories");
   }
   function clickFav() {
-    navigate("/Favourites");
+    navigate("/Projektarbete-Grupp3/Favourites");
   }
   function clickFilm(movie) {
-    navigate("/FilmView", { state: movie });
+    navigate("/Projektarbete-Grupp3/FilmView", { state: movie });
   }
 
   return (
