@@ -32,8 +32,8 @@ function Categories() {
         })
         
         return (
-            <div key={genre}>
-                <h2>{genre}</h2>
+            <div key={genre} className='div--genre'>
+                <h2 className='div--genre__header'>{genre}</h2>
                 <Category movies={moviesWithSameGenre}/>
             </div>
         )

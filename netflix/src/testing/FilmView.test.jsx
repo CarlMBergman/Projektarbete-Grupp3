@@ -1,6 +1,6 @@
- import FilmView from "../views/FilmView/FilmView";
-import { render, screen, waitFor, fireEvent } from '@testing-library/react';
-import React from 'react';
+import FilmView from "../views/FilmView/FilmView";
+import { render, screen, waitFor } from '@testing-library/react';
+import { it, expect } from "vitest";
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { test } from 'vitest';
@@ -11,17 +11,35 @@ import { test } from 'vitest';
 
 
 
+it.skip('should render film correctly' , () => {
+
+render(<FilmView/>);
+
+const filmTitle = screen.getByText('The Shawshank Redemption')
+const filmImg = screen.getByAltText('Bild');
+const filmGenre = screen.getByText('Genre: Drama')
+const filmActors = screen.getByText('Actors: Tim Robbins, Morgan Freeman, Bob Gunton')
+const filmRating = screen.getByText('Rating: R')
+const filmYear = screen.getByText('Year: 1994')
+const filmSynopsis = screen.getByText('Synopsis')
+const filmSynopsisP = screen.getByText('Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.')
+const filmButton = screen.getByText('Add to favorite');
+
+expect(filmTitle).toBeInTheDocument();
+expect(filmImg).toBeInTheDocument();
+expect(filmGenre).toBeInTheDocument();
+expect(filmActors).toBeInTheDocument();
+expect(filmRating).toBeInTheDocument();
+expect(filmYear).toBeInTheDocument();
+expect(filmSynopsis).toBeInTheDocument();
+expect(filmSynopsisP).toBeInTheDocument();
+expect(filmButton).toBeInTheDocument();
+
+})
 
 
-/* 
-const movie = {
-  title: 'The Shawshank Redemption',
-  genre: 'Drama',
-  actors: ['Tim Robbins', 'Morgan Freeman', 'Bob Gunton'],
-  rating: 'R',
-  year: 1994,
-  synopsis: 'Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.',
-}; */
+it.skip('should adds film to favorites when "Add to favorite" button is clicked', async () => { // Lägg till "async" här
+    render(<FilmView />);
 
 test('Renders film information correctly', async () => {
   // Render the component
@@ -69,6 +87,8 @@ test('Renders "Add to favorite" button', async () => {
 });
 
 
+it.skip('should not display "This film is in your favorites" initially', () => {
+    const { queryByText } = render(<FilmView />);
 
 const movie = {
   title: 'The Shawshank Redemption',
@@ -150,4 +170,4 @@ test('Testa att knappen lägger till i favoriter', () => {
 });
 
 
- */
+ 

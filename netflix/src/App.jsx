@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import FilmView from "./views/FilmView/FilmView";
 import Favourites from "./views/Favourites/Favourites";
@@ -8,19 +7,19 @@ import "./App.css";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/Projektarbete-Grupp3/",
     element: <Home />,
   },
   {
-    path: "/FilmView",
+    path: "/Projektarbete-Grupp3/FilmView",
     element: <FilmView />,
   },
   {
-    path: "/Favourites",
+    path: "/Projektarbete-Grupp3/Favourites",
     element: <Favourites />,
   },
   {
-    path: "/Categories",
+    path: "/Projektarbete-Grupp3/Categories",
     element: <Categories />,
   },
 ]);

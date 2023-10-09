@@ -1,27 +1,37 @@
 import './Category.css';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import movies from '/src/movies.json';
 
 function Category(props) {
-    const [movieGenre, setMovieGenre] = useState([])
+    // const [movieGenre, setMovieGenre] = useState([])
 
     function filterCategories() {
         const category = movies.filter((movie) => movie.thumbnail);
         category.sort((a, b) => a.genre.localeCompare(b.genre));
-        setMovieGenre(category)
+        // setMovieGenre(category)
     }
 
     useEffect(() => {
         filterCategories()
-        console.log(movieGenre);
+        // console.log(movieGenre);
     }, [])
 
     const movie = props.movies.map((movie) => {
-        return <p>{movie.title}</p>
+        return (
+            <div key={movie.title} className="category">
+                <article className='category__article'>
+                    <img 
+                    src={movie.thumbnail} 
+                    onError={(e) => e.target.alt = 'Image does not exist'} 
+                    className='category__article__img'/>
+                </article>
+                <h3>{movie.title}</h3>
+            </div>
+        )
     })
 
     return (
-        <div>
+        <div className='category__div'>
             {movie}
             {/* <h1>Categories</h1>
             {movieGenre.map((movie) => {

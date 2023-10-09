@@ -1,31 +1,38 @@
 import './FilmView.css'
-import { useState } from 'react';
+import { useEffect } from 'react';
 import Header from '../../components/header/Header'
 import { useLocation } from 'react-router-dom';
-
+import removeMovieByTitle from '../../components/RemoveFavoriteBtn';
+import FavoriteBtn from '../../components/FavoriteBtn';
 
 function FilmView() {
 
-
+  // const [favouriteMovies, setFavouriteMovies] = useState([]);
   const location = useLocation()
   const movie = location.state
   console.log(movie);
 
-
-  function saveMovies(movie) {
-    const savedMovies = [];
-    const test = JSON.parse(sessionStorage.getItem("savedMovies"));
-    console.log(test);
-    if (test) {
-      const updated = [...test, movie];
-      console.log(updated);
-      sessionStorage.setItem("savedMovies", JSON.stringify(updated));
-    } else {
-      sessionStorage.setItem("savedMovies", JSON.stringify([movie]));
+  useEffect(() => {
+    function getMovies() {
+        // Hämta den sparade filmlistan från sessionStorage och konvertera den från JSON till JavaScript-objekt.
+      let data = JSON.parse(sessionStorage.getItem("savedMovies"));
+       // Kontrollera om det finns sparade filmer och om listan inte är tom.
+      if (data !== null && data.length > 0) {
+         // Om det finns sparade filmer, uppdatera tillståndet (favouriteMovies) i komponenten med den sparade filmlistan.
+        // setFavouriteMovies(data);
+      }
     }
-    console.log("tillagd i favoriter")
-  }
+      // Anropa den inre funktionen getMovies för att hämta och uppdatera sparade filmer när komponenten renderas.
+    getMovies();
+  }, []);
 
+
+    // Hantera klick på "Ta bort" knappen
+  const handleRemoveMovie = () => {
+    if (movie && movie.title) {
+      removeMovieByTitle(movie.title);
+    }
+  };
 
 
      return(
@@ -46,9 +53,10 @@ function FilmView() {
          <div className='synopsis'>
            <p className='synopsisP'>{movie.synopsis}</p>
          </div>
-         <button className='filmView__article-right-button' onClick={() => saveMovies(movie)}>Add to favorite</button>
-       
-      
+         <div className='filmView__article-right-buttons'>
+         <button className='filmView__article-right-button'  onClick={() => FavoriteBtn(movie)}>Add to favorite</button>
+         <button className='filmView__article-right-button'onClick={() => handleRemoveMovie(movie.title)}>Remove from favorite </button>
+         </div>
        </article>
      </section>
       </>
