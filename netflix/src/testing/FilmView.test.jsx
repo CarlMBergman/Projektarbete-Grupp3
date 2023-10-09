@@ -1,4 +1,4 @@
-/* import FilmView from "../views/FilmView/FilmView";
+import FilmView from "../views/FilmView/FilmView";
 import { render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
@@ -9,7 +9,7 @@ import userEvent from '@testing-library/user-event';
 
 
 
-it('should render film correctly' , () => {
+it.skip('should render film correctly' , () => {
 
 render(<FilmView/>);
 
@@ -36,7 +36,7 @@ expect(filmButton).toBeInTheDocument();
 })
 
 
-it('should adds film to favorites when "Add to favorite" button is clicked', async () => { // Lägg till "async" här
+it.skip('should adds film to favorites when "Add to favorite" button is clicked', async () => { // Lägg till "async" här
     render(<FilmView />);
 
     // Kontrollera att meddelandet inte finns initialt
@@ -52,11 +52,11 @@ it('should adds film to favorites when "Add to favorite" button is clicked', asy
   });
 
 
-it('should not display "This film is in your favorites" initially', () => {
+it.skip('should not display "This film is in your favorites" initially', () => {
     const { queryByText } = render(<FilmView />);
 
     // Kontrollera att meddelandet inte finns initialt
     expect(queryByText('Added to favorite')).toBeNull();
   });
 
- */
+ 
