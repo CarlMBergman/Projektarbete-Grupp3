@@ -1,4 +1,3 @@
-/*
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
@@ -12,11 +11,13 @@ beforeEach(() => {
 
 describe("App", () => {
   test("Should display trending movies", () => {
-    const movie = screen.getByRole("article");
+    const movie = screen.getAllByRole("article");
 
-    expect(movie).toBeInTheDocument();
+    expect(screen.movie).toBeInTheDocument();
     expect(screen.findByText("Trending Movies")).toBeInTheDocument();
   });
+
+  /*
 
   test("Should display trending movies release date", () => {
     const movie = screen.getByRole("article");
@@ -53,6 +54,5 @@ describe("App", () => {
     expect(screen.getByText("Recommended for you")).toBeInTheDocument();
     //expect(screen.findByText("Rating:")).toBeInTheDocument();
   });
+  */
 });
-
-*/
