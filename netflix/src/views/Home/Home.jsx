@@ -134,7 +134,7 @@ function Home() {
           </div>
           <div className="recommended__container">
             <h2 className="recommended__title">Recommended for you</h2>
-            <Slider {...settings}>
+            {/* <Slider {...settings}>
               {recommendedMovies.map((movie, index) => {
                 return (
                   <article className="movie__card" key={index}>
@@ -156,7 +156,7 @@ function Home() {
                   </article>
                 );
               })}
-            </Slider>
+            </Slider> */}
           </div>
         </div>
       </main>
