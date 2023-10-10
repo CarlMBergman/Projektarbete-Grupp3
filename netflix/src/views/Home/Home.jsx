@@ -54,9 +54,10 @@ function Home() {
   const settings = {
     centerMode: true,
     dots: true,
+    arrows: false,
     centerPadding: "60px",
     slidesToShow: 3,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 2000,
     responsive: [
       {

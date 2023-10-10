@@ -1,4 +1,4 @@
-/* import { render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import App from "../App";
@@ -11,14 +11,12 @@ beforeEach(() => {
 
 describe("App", () => {
   test("Should display trending movies", () => {
-    const movie = screen.getAllByRole("article");
-
-    expect(screen.movie).toBeInTheDocument();
-    expect(screen.findByText("Trending Movies")).toBeInTheDocument();
+    expect(screen.getAllByText("The Godfather: Part II")).toHaveLength(2);
+    expect(screen.getAllByText("Release year: 1974")).toHaveLength(2);
+    expect(screen.getAllByText("Rating: R")).toHaveLength(2);
   });
 
-
-
+  /* 
   test("Should display trending movies release date", () => {
     const movie = screen.getByRole("article");
 
@@ -54,6 +52,5 @@ describe("App", () => {
     expect(screen.getByText("Recommended for you")).toBeInTheDocument();
     //expect(screen.findByText("Rating:")).toBeInTheDocument();
   });
-
-});
   */
+});
