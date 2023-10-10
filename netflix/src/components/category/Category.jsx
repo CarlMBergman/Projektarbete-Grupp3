@@ -16,44 +16,31 @@ function Category(props) {
     useEffect(() => {
         filterCategories()
         // console.log(movieGenre);
-    }, [])
+    }, [])    
+    
+    function clickFilm(movie) {
+        navigate("/Projektarbete-Grupp3/FilmView", { state: movie });
+      }
 
     const movie = props.movies.map((movie) => {
         return (
-            <div key={movie.title} className="category">
+            <div key={movie.title} className="category" onClick={clickFilm}>
                 <article className='category__article'>
                     <img 
                     src={movie.thumbnail} 
                     onError={(e) => e.target.alt = 'Image does not exist'} 
                     className='category__article__img'
-                    onClick={clickFilm}/>
+                    />
                 </article>
-                <h3>{movie.title}</h3>
+                <h5>{movie.title}</h5>
             </div>
         )
     })
-    function clickFilm(movie) {
-        navigate("/Projektarbete-Grupp3/FilmView", { state: movie });
-      }
+
 
     return (
         <div className='category__div'>
             {movie}
-            {/* <h1>Categories</h1>
-            {movieGenre.map((movie) => {
-                return(
-            
-            <section key={movie.title} className="category">
-                <h4>{movie.genre}</h4>
-                <article className='category__article'>
-                    <img 
-                    src={movie.thumbnail} 
-                    onError={(e) => e.target.alt = 'Image does not exist'} 
-                    className='category__article__img'/>
-                </article>
-            </section>
-            )
-            })} */}
         </div>
     )
 }
