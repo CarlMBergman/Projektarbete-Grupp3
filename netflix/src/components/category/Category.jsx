@@ -4,18 +4,15 @@ import { useNavigate } from "react-router-dom";
 import movies from '/src/movies.json';
 
 function Category(props) {
-    // const [movieGenre, setMovieGenre] = useState([])
     const navigate = useNavigate();
 
     function filterCategories() {
         const category = movies.filter((movie) => movie.thumbnail);
         category.sort((a, b) => a.genre.localeCompare(b.genre));
-        // setMovieGenre(category)
     }
 
     useEffect(() => {
         filterCategories()
-        // console.log(movieGenre);
     }, [])    
     
     function clickFilm(movie) {
@@ -24,7 +21,7 @@ function Category(props) {
 
     const movie = props.movies.map((movie) => {
         return (
-            <div key={movie.title} className="category" onClick={clickFilm}>
+            <div key={movie.title} className="category" onClick={() => clickFilm(movie)}>
                 <article className='category__article'>
                     <img 
                     src={movie.thumbnail} 

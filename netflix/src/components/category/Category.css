@@ -1,7 +1,7 @@
 .category{
     display: flex;
     flex-direction: column;
-    height: 16rem;
+    height: 16.5rem;
     width: 11rem;
     background-color: rgb(176, 27, 27);
     justify-content: space-between;
