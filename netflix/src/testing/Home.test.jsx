@@ -11,9 +11,7 @@ beforeEach(() => {
 });
 
 describe("App", () => {
-  /* test("Should display trending movies", () => {
-    render(<App />);
-
+  test("Should display trending movies", () => {
     const movie = screen.getByRole("article");
 
     expect(movie).toBeInTheDocument();
@@ -21,8 +19,6 @@ describe("App", () => {
   });
 
   test("Should display trending movies release date", () => {
-    render(<App />);
-
     const movie = screen.getByRole("article");
 
     expect(movie).toBeInTheDocument();
@@ -31,8 +27,6 @@ describe("App", () => {
   });
 
   test("Should display trending movies rating", () => {
-    render(<App />);
-
     const movie = screen.getByRole("article");
 
     expect(movie).toBeInTheDocument();
@@ -41,8 +35,6 @@ describe("App", () => {
   });
 
   test("Should display recommended movies", () => {
-    render(<App />);
-
     const movie = screen.getByRole("article");
 
     expect(movie).toBeInTheDocument();
@@ -50,8 +42,6 @@ describe("App", () => {
   });
 
   test("Should display recommendeds section release date", () => {
-    render(<App />);
-
     const movie = screen.getByRole("article");
 
     expect(movie).toBeInTheDocument();
@@ -60,9 +50,9 @@ describe("App", () => {
   });
 
   test("Should display recommendeds movies rating", () => {
-    render(<Home />);
-
-    expect(screen.getAllByText("Recommended for you")).toBeInTheDocument();
+    expect(screen.getByText("Recommended for you")).toBeInTheDocument();
     //expect(screen.findByText("Rating:")).toBeInTheDocument();
   });
-}); */
+});
+
+*/
