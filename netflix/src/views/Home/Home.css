@@ -4,6 +4,7 @@
   width: 300px;
   height: 450px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .btn {
@@ -50,4 +51,62 @@
 
 .movie__title {
   margin-top: 20px;
+}
+
+@media (max-width: 640px) {
+  .img {
+    width: 250px;
+    height: 375px;
+  }
+
+  .movie__card {
+    max-width: 250px;
+  }
+
+  .btn {
+    padding: 4px 10px;
+    font-size: 0.9rem;
+  }
+
+  .trending__title,
+  .recommended__title {
+    font-size: 1.2rem;
+    margin: 20px;
+  }
+
+  .release__year,
+  .rating,
+  .movie__title {
+    font-size: 0.9rem;
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .img {
+    width: 200px;
+    height: 300px;
+  }
+
+  .movie__card {
+    max-width: 200px;
+  }
+
+  .btn {
+    padding: 3px 8px;
+    font-size: 0.8rem;
+  }
+
+  .trending__title,
+  .recommended__title {
+    font-size: 1rem;
+    margin: 15px;
+  }
+
+  .release__year,
+  .rating,
+  .movie__title {
+    font-size: 0.8rem;
+    margin: 4px 0;
+  }
 }
