@@ -1,4 +1,3 @@
-import React from "react";
 import "./FavouriteCard.css"
 
 function FavouriteCard({ movieData }) {
