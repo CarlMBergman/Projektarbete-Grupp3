@@ -19,8 +19,8 @@ function Favourites() {
     return (
         <div>
             <Header />
-            <main>
-                <h4>Favourites</h4>
+            <main className="favourites_main">
+                <h2>Favourites</h2>
                 <section>
                     {favouriteMovies.map((movie, index) => (
                         <FavouriteCard key={index} movieData={movie} />

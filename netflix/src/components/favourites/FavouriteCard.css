@@ -3,3 +3,13 @@
     background-color: black;
     width: 200px;
 }
+
+.favourite_article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    max-width: 400px;
+}
