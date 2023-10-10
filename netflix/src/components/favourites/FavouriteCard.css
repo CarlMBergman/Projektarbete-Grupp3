@@ -1,5 +1,24 @@
 .favImg{
-    height: 250px;
-    background-color: black;
-    width: 200px;
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: 450px;
+    object-fit: cover;
+}
+
+.favourite_article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    max-width: 400px;
+}
+
+@media only screen and (max-width: 350px) {
+    .favImg{
+        width: 200px;
+        height: 350px;
+    }
 }
