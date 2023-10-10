@@ -1,29 +1,45 @@
 .category{
     display: flex;
     flex-direction: column;
-    height: 20rem;
-    width: 15rem;
-    background-color: beige;
+    height: 16.5rem;
+    width: 11rem;
+    background-color: rgb(176, 27, 27);
     justify-content: space-between;
     align-items: center;
+    font-size: medium;
+    line-height: .8rem;
     margin: .5rem;
     padding: .5rem;
+    text-wrap: wrap;
     text-align: center;
 }
 
+.category:hover{
+    -webkit-transform: scale(1.04);
+    -ms-transform: scale(1.04);
+    transform: scale(1.04);
+  }
+
 .category__article{
-    height: 10rem;
-    width: 8.5rem;
+    height: 13rem;
+    width: 10rem;
     background-color: aquamarine;
-    margin: 1rem;
+    margin: .5rem;
+    align-items: center;
+    justify-content: center;
 }
 
 .category__article__img{
-    height: 8rem;
-    width: 7rem;
+    height: 13rem;
+    width: 10rem;
+
 }
 
-.hj{
+.category__div{
+    margin-left: 1rem;
     display: flex;
-    flex-wrap: wrap;
+    overflow: auto;
+    white-space: nowrap;
+    /* flex-wrap:wrap; */
 }
+
