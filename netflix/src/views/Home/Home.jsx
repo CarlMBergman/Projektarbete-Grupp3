@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "./Home.css";
 import movies from "/src/movies.json";
 import Header from "../../components/header/Header";
-import FavoriteBtn from "../../components/favoriteBtn";
+import FavoriteBtn from "../../components/FavoriteBtn";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
