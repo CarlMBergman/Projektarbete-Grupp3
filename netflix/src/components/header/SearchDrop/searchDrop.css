@@ -14,6 +14,7 @@
     overflow: auto;
     border-radius: 10px;
     z-index: 5;
+    border: 2px solid #bb5151;
 }
 
 .search--drop::-webkit-scrollbar {
@@ -24,4 +25,11 @@
 .search--drop::-webkit-scrollbar-thumb {
     background-color: white;
     border-radius: 50px;
+}
+
+@media only screen and (max-width: 400px) {
+    .search--drop {
+        width: 220px;
+        right: -10px;
+    }
 }
