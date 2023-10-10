@@ -54,10 +54,9 @@ function Home() {
   const settings = {
     centerMode: true,
     dots: true,
-    arrows: false,
     centerPadding: "60px",
     slidesToShow: 3,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 2000,
     responsive: [
       {
@@ -105,7 +104,7 @@ function Home() {
           <div className="trending__container">
             <h2 className="trending__title">Trending Movies</h2>
             <Slider {...settings}>
-              {trendingMovies.map((movie) => {
+              {trendingMovies.map((movie, index) => {
                 return (
                   <article
                     className="movie__card"
@@ -124,7 +123,11 @@ function Home() {
                     <p className="release__year">Release year: {movie.year}</p>
                     <p className="rating">Rating: {movie.rating}</p>
                     <h2 className="movie__title">{movie.title}</h2>
-                    <button className="btn" onClick={() => FavoriteBtn(movie)}>
+                    <button
+                      className="btn"
+                      onClick={() => FavoriteBtn(movie)}
+                      data-testid={`trending-save-btn-${index}`}
+                    >
                       Save Movie
                     </button>
                   </article>
@@ -151,7 +154,11 @@ function Home() {
                     <p className="release__year">Release year: {movie.year}</p>
                     <p className="rating">Rating: {movie.rating}</p>
                     <h2 className="movie__title">{movie.title}</h2>
-                    <button className="btn" onClick={() => FavoriteBtn(movie)}>
+                    <button
+                      className="btn"
+                      onClick={() => FavoriteBtn(movie)}
+                      data-testid={`recommended-save-btn-${index}`}
+                    >
                       Save Movie
                     </button>
                   </article>
