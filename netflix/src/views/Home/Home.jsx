@@ -54,6 +54,7 @@ function Home() {
   const settings = {
     centerMode: true,
     dots: true,
+    arrows: false,
     centerPadding: "60px",
     slidesToShow: 3,
     autoplay: true,
@@ -63,6 +64,7 @@ function Home() {
         breakpoint: 768,
         settings: {
           centerMode: true,
+          arrows: false,
           centerPadding: "40px",
           slidesToShow: 3,
         },
@@ -71,6 +73,7 @@ function Home() {
         breakpoint: 480,
         settings: {
           centerMode: true,
+          arrows: false,
           centerPadding: "40px",
           slidesToShow: 1,
         },

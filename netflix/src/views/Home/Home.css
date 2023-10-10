@@ -1,3 +1,8 @@
+body {
+  background-color: #8a0404;
+  color: white;
+}
+
 .img {
   display: block;
   margin: 0 auto;
@@ -32,6 +37,18 @@
   text-align: center;
   height: 100%;
   max-width: 300px;
+  background-color: rgb(176, 27, 27);
+  box-shadow: -1px 2px 29px 0px rgba(0, 0, 0, 0.62);
+  margin: 40px 0;
+  transition: ease 0.3s;
+  height: 750px;
+  padding: 20px;
+}
+
+.movie__card:hover {
+  -webkit-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  transform: scale(1.04);
 }
 
 .trending__container {
