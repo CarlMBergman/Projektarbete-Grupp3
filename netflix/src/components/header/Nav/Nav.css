@@ -8,8 +8,9 @@
     width: 200px;
     height: 300px;
     top: 116px;
-    left: 30px;
+    
     border-radius: 10px;
+    z-index: 5;
 }
 
 .nav__btn {

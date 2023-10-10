@@ -16,14 +16,24 @@
     width: 8.5rem;
     background-color: aquamarine;
     margin: 1rem;
+    align-items: center;
+    justify-content: center;
 }
 
 .category__article__img{
-    height: 8rem;
-    width: 7rem;
+    height: 13rem;
+    width: 10rem;
+
 }
 
 .hj{
     display: flex;
     flex-wrap: wrap;
+}
+
+.category__div{
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
 }

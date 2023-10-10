@@ -1,4 +1,53 @@
-img {
-  max-width: 500px;
-  max-height: 500px;
+.img {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  height: 450px;
+  object-fit: cover;
+}
+
+.btn {
+  font-family: monospace;
+  font-size: 1rem;
+  color: #fafafa;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 10px;
+  border: 2px solid #fafafa;
+  background: #252525;
+  box-shadow: 3px 3px #fafafa;
+  cursor: pointer;
+  margin: 30px 0;
+}
+
+.btn:active {
+  box-shadow: none;
+  transform: translate(3px, 3px);
+}
+
+.movie__card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  max-width: 300px;
+}
+
+.trending__container {
+  margin-bottom: 5%;
+}
+
+.trending__title,
+.recommended__title {
+  text-align: center;
+  margin: 30px;
+}
+
+.release__year,
+.rating {
+  margin: 10px;
+}
+
+.movie__title {
+  margin-top: 20px;
 }
