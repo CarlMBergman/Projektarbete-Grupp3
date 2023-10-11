@@ -12,7 +12,7 @@ function Header() {
 
     let searchedMovies = null
     searchedMovies = movies.filter((movie) => {
-        return movie.title.toLowerCase().startsWith(searchInput.toLowerCase())
+        return movie.title.toLowerCase().includes(searchInput.toLowerCase())
     })
 
     return (
