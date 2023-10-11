@@ -1,5 +1,4 @@
 function FavoriteBtn(movie) {
-  //const savedMovies = [];
   const test = JSON.parse(sessionStorage.getItem("savedMovies"));
   console.log(test);
   if (test) {
