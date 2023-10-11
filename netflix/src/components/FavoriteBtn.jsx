@@ -5,6 +5,7 @@ function FavoriteBtn(props) {
   const [likedText, setLikedText] = useState('Save Movie')
   const movie = props.movie
   const index = props.index
+  const place = props.place
   const likedOrNot = checkIfLiked(movie)
   console.log(likedOrNot);
   useEffect(() => {
@@ -43,7 +44,7 @@ function FavoriteBtn(props) {
   }
   
 
-  return <button className="btn" onClick={ onClick } data-testid={`trending-save-btn-${index}`}>{ likedText }</button>
+  return <button className="btn" onClick={ onClick } data-testid={`${place}-save-btn-${index}`}>{ likedText }</button>
 }
 
 export default FavoriteBtn;

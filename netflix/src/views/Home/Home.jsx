@@ -111,7 +111,7 @@ function Home() {
                     <p className="release__year">Release year: {movie.year}</p>
                     <p className="rating">Rating: {movie.rating}</p>
                     <h2 onClick={() => clickFilm(movie)} className="movie__title">{movie.title}</h2>
-                    <FavoriteBtn movie={movie} index={index}/>
+                    <FavoriteBtn place='trending' movie={movie} index={index}/>
                   </article>
                 );
               })}
@@ -136,7 +136,7 @@ function Home() {
                     <p className="release__year">Release year: {movie.year}</p>
                     <p className="rating">Rating: {movie.rating}</p>
                     <h2 className="movie__title">{movie.title}</h2>
-                    <FavoriteBtn movie={movie} index={index}/>
+                    <FavoriteBtn place='recomended' movie={movie} index={index}/>
                   </article>
                 );
               })}
