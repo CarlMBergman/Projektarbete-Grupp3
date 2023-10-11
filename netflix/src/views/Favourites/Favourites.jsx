@@ -23,7 +23,7 @@ function Favourites() {
                 <h2>Favourites</h2>
                 <section>
                     {favouriteMovies.map((movie, index) => (
-                        <FavouriteCard key={index} movieData={movie} />
+                        <FavouriteCard key={index} index={index} movieData={movie} />
                     ))}
                 </section>
             </main>

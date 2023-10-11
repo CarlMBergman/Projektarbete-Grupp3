@@ -36,7 +36,7 @@ it('should be able to click on FavoriteBtn', async () => {
   const psycho = screen.getAllByText('Psycho')
   await userEvent.click(psycho[0])
 
-      const favoBtn = screen.getByText('Add to favorite')
+      const favoBtn = screen.getByText('Save Movie')
        await userEvent.click(favoBtn);
        await userEvent.click(screen.getByTestId("burger"))
        await userEvent.click(screen.getAllByText("FAVOURITES")[0])
