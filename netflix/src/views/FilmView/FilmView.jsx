@@ -29,14 +29,6 @@ function FilmView() {
   },[]);
 
 
-    // Hantera klick på "Ta bort" knappen
-  const handleRemoveMovie = () => {
-    if (movie && movie.title) {
-      removeMovieByTitle(movie.title);
-    }
-  };
-
-
      return(
       <>
       <Header/>

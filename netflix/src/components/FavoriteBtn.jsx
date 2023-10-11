@@ -12,7 +12,7 @@ function FavoriteBtn(props) {
     if (likedOrNot) {
       setLikedText('Remove Movie')
     }
-  }, [])
+  }, [likedOrNot])
   
 
   function onClick() {
