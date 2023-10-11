@@ -136,7 +136,7 @@ function Home() {
                     <p className="release__year">Release year: {movie.year}</p>
                     <p className="rating">Rating: {movie.rating}</p>
                     <h2 className="movie__title">{movie.title}</h2>
-                    <FavoriteBtn place='recomended' movie={movie} index={index}/>
+                    <FavoriteBtn place='recommended' movie={movie} index={index}/>
                   </article>
                 );
               })}

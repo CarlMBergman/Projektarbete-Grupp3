@@ -56,8 +56,7 @@ function FilmView() {
            <p className='synopsisP'>{movie.synopsis}</p>
          </div>
          <div className='filmView__article-right-buttons'>
-         <button className='filmView__article-right-button'  onClick={() => FavoriteBtn(movie)}>Add to favorite</button>
-         <button className='filmView__article-right-button'onClick={() => handleRemoveMovie(movie.title)}>Remove from favorite </button>
+         <FavoriteBtn place='movieView' movie={movie} index={0}/>
          </div>
        </article>
      </section>
