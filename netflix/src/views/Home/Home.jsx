@@ -83,7 +83,6 @@ function Home() {
   function clickFilm(movie) {
     navigate("/Projektarbete-Grupp3/FilmView", { state: movie });
   }
-  console.log(trendingMovies);
 
   return (
     <div>
@@ -112,13 +111,7 @@ function Home() {
                     <p className="release__year">Release year: {movie.year}</p>
                     <p className="rating">Rating: {movie.rating}</p>
                     <h2 onClick={() => clickFilm(movie)} className="movie__title">{movie.title}</h2>
-                    <button
-                      className="btn"
-                      onClick={() => FavoriteBtn(movie)}
-                      data-testid={`trending-save-btn-${index}`}
-                    >
-                      Save Movie
-                    </button>
+                    <FavoriteBtn movie={movie} index={index}/>
                   </article>
                 );
               })}
@@ -143,13 +136,7 @@ function Home() {
                     <p className="release__year">Release year: {movie.year}</p>
                     <p className="rating">Rating: {movie.rating}</p>
                     <h2 className="movie__title">{movie.title}</h2>
-                    <button
-                      className="btn"
-                      onClick={() => FavoriteBtn(movie)}
-                      data-testid={`recommended-save-btn-${index}`}
-                    >
-                      Save Movie
-                    </button>
+                    <FavoriteBtn movie={movie} index={index}/>
                   </article>
                 );
               })}
