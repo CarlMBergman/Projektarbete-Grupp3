@@ -1,5 +1,9 @@
 body {
   background-color: #8a0404;
+}
+
+h2,
+p {
   color: white;
 }
 

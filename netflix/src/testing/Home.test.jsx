@@ -1,8 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, test, beforeEach } from "vitest";
-
 import userEvent from "@testing-library/user-event";
-
 import Home from "../views/Home/Home";
 import { BrowserRouter } from "react-router-dom";
 
