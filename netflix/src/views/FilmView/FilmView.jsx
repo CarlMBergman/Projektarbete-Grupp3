@@ -4,6 +4,7 @@ import Header from '../../components/header/Header'
 import { useLocation } from 'react-router-dom';
 import removeMovieByTitle from '../../components/RemoveFavoriteBtn';
 import FavoriteBtn from '../../components/FavoriteBtn';
+import Footer from '../../components/footer/Footer';
 
 
 function FilmView() {
@@ -60,6 +61,8 @@ function FilmView() {
          </div>
        </article>
      </section>
+     <Footer/>
+
       </>
      
         
