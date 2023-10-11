@@ -39,17 +39,10 @@ function Home() {
 
       //Pushar alla våra recommended filmer till randomMovies array
       randomMovies.push(recommendedMovies);
-
-      //console.log(randomMovies);
     }
     //Uppdaterar recommendedMovies state
     setRecommendedMovies(randomMovies);
   }
-
-  // function saveMovies(movie) {
-  //   sessionStorage.setItem("savedMovies", JSON.stringify(movie));
-  //   console.log(sessionStorage);
-  // }
 
   //Slick carousel inställningar
   const settings = {
@@ -85,17 +78,8 @@ function Home() {
   useEffect(() => {
     filterTrendingMovies();
     filterRecommendedMovies();
-    //console.log(trendingMovies);
-    //console.log(recommendedMovies);
   }, []);
 
-  //Routes
-  // function clickCat() {
-  //   navigate("/Projektarbete-Grupp3/Categories");
-  // }
-  // function clickFav() {
-  //   navigate("/Projektarbete-Grupp3/Favourites");
-  // }
   function clickFilm(movie) {
     navigate("/Projektarbete-Grupp3/FilmView", { state: movie });
   }
@@ -139,9 +123,9 @@ function Home() {
               })}
             </Slider>
           </div>
+
           <div className="recommended__container">
             <h2 className="recommended__title">Recommended for you</h2>
-
             <Slider {...settings}>
               {recommendedMovies.map((movie, index) => {
                 return (
