@@ -68,8 +68,8 @@ function Home() {
         settings: {
           centerMode: true,
           arrows: false,
-          centerPadding: "40px",
-          slidesToShow: 3,
+          centerPadding: "30px",
+          slidesToShow: 2,
         },
       },
       {
@@ -77,27 +77,25 @@ function Home() {
         settings: {
           centerMode: true,
           arrows: false,
-          centerPadding: "15px",
+          centerPadding: "20px",
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 650,
+        breakpoint: 450,
         settings: {
           centerMode: true,
           arrows: false,
-          centerPadding: "15px",
-          slidesToShow: 2,
+          centerPadding: "10px",
+          slidesToShow: 1,
         },
       },
-
       {
-        breakpoint: 480,
+        breakpoint: 280,
         settings: {
           centerMode: true,
           arrows: false,
-          centerPadding: "15px",
-
+          centerPadding: "5px",
           slidesToShow: 1,
         },
       },
@@ -139,8 +137,13 @@ function Home() {
                     />
                     <p className="release__year">Release year: {movie.year}</p>
                     <p className="rating">Rating: {movie.rating}</p>
-                    <h2 onClick={() => clickFilm(movie)} className="movie__title">{movie.title}</h2>
-                    <FavoriteBtn place='trending' movie={movie} index={index}/>
+                    <h2
+                      onClick={() => clickFilm(movie)}
+                      className="movie__title"
+                    >
+                      {movie.title}
+                    </h2>
+                    <FavoriteBtn place="trending" movie={movie} index={index} />
                   </article>
                 );
               })}
@@ -165,7 +168,11 @@ function Home() {
                     <p className="release__year">Release year: {movie.year}</p>
                     <p className="rating">Rating: {movie.rating}</p>
                     <h2 className="movie__title">{movie.title}</h2>
-                    <FavoriteBtn place='recommended' movie={movie} index={index}/>
+                    <FavoriteBtn
+                      place="recommended"
+                      movie={movie}
+                      index={index}
+                    />
                   </article>
                 );
               })}
