@@ -30,6 +30,6 @@ describe('tests for categories', () => {
 //     })
 // })
 
-it('should navigate to filmView', () => {
+// it('should navigate to filmView', () => {
 
-})
+// })
