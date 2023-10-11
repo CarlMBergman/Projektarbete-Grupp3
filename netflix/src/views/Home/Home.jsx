@@ -113,6 +113,7 @@ function Home() {
     navigate("/Projektarbete-Grupp3/FilmView", { state: movie });
   }
   console.log(trendingMovies);
+  console.log(trendingMovies);
 
   return (
     <div>
