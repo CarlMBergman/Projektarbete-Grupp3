@@ -38,22 +38,16 @@ function Home() {
 
       //Pushar alla våra recommended filmer till randomMovies array
       randomMovies.push(recommendedMovies);
-
-      //console.log(randomMovies);
     }
     //Uppdaterar recommendedMovies state
     setRecommendedMovies(randomMovies);
   }
 
-  // function saveMovies(movie) {
-  //   sessionStorage.setItem("savedMovies", JSON.stringify(movie));
-  //   console.log(sessionStorage);
-  // }
-
   //Slick carousel inställningar
   const settings = {
     centerMode: true,
     dots: true,
+    arrows: false,
     centerPadding: "60px",
     slidesToShow: 3,
     autoplay: true,
@@ -63,6 +57,7 @@ function Home() {
         breakpoint: 768,
         settings: {
           centerMode: true,
+          arrows: false,
           centerPadding: "40px",
           slidesToShow: 3,
         },
@@ -71,6 +66,7 @@ function Home() {
         breakpoint: 480,
         settings: {
           centerMode: true,
+          arrows: false,
           centerPadding: "40px",
           slidesToShow: 1,
         },
@@ -81,17 +77,8 @@ function Home() {
   useEffect(() => {
     filterTrendingMovies();
     filterRecommendedMovies();
-    //console.log(trendingMovies);
-    //console.log(recommendedMovies);
   }, []);
 
-  //Routes
-  // function clickCat() {
-  //   navigate("/Projektarbete-Grupp3/Categories");
-  // }
-  // function clickFav() {
-  //   navigate("/Projektarbete-Grupp3/Favourites");
-  // }
   function clickFilm(movie) {
     navigate("/Projektarbete-Grupp3/FilmView", { state: movie });
   }
@@ -104,7 +91,7 @@ function Home() {
           <div className="trending__container">
             <h2 className="trending__title">Trending Movies</h2>
             <Slider {...settings}>
-              {trendingMovies.map((movie) => {
+              {trendingMovies.map((movie, index) => {
                 return (
                   <article
                     className="movie__card"
@@ -123,7 +110,11 @@ function Home() {
                     <p className="release__year">Release year: {movie.year}</p>
                     <p className="rating">Rating: {movie.rating}</p>
                     <h2 className="movie__title">{movie.title}</h2>
-                    <button className="btn" onClick={() => FavoriteBtn(movie)}>
+                    <button
+                      className="btn"
+                      onClick={() => FavoriteBtn(movie)}
+                      data-testid={`trending-save-btn-${index}`}
+                    >
                       Save Movie
                     </button>
                   </article>
@@ -131,9 +122,9 @@ function Home() {
               })}
             </Slider>
           </div>
+
           <div className="recommended__container">
             <h2 className="recommended__title">Recommended for you</h2>
-
             <Slider {...settings}>
               {recommendedMovies.map((movie, index) => {
                 return (
@@ -150,7 +141,11 @@ function Home() {
                     <p className="release__year">Release year: {movie.year}</p>
                     <p className="rating">Rating: {movie.rating}</p>
                     <h2 className="movie__title">{movie.title}</h2>
-                    <button className="btn" onClick={() => FavoriteBtn(movie)}>
+                    <button
+                      className="btn"
+                      onClick={() => FavoriteBtn(movie)}
+                      data-testid={`recommended-save-btn-${index}`}
+                    >
                       Save Movie
                     </button>
                   </article>
