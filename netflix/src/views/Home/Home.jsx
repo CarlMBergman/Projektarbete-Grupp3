@@ -26,7 +26,7 @@ function Home() {
     const recommended = movies.filter((movie) => !movie.isTrending);
     setRecommendedMovies(recommended);
 
-    //Skapar en variabel som kommer hålla 10 slumpmässiga filmer
+    //Skapar en array som kommer hålla 10 slumpmässiga filmer
     const randomMovies = [];
     for (let i = 0; i < 10; i++) {
       //For loopen körs 10 gånger och plockar fram 10 slumpmässiga siffor (filmer) från recommendedMovies array
@@ -55,7 +55,7 @@ function Home() {
     autoplaySpeed: 2000,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 1000,
         settings: {
           centerMode: true,
           arrows: false,
@@ -64,11 +64,40 @@ function Home() {
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 850,
         settings: {
           centerMode: true,
           arrows: false,
           centerPadding: "40px",
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          centerMode: true,
+          arrows: false,
+          centerPadding: "15px",
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 650,
+        settings: {
+          centerMode: true,
+          arrows: false,
+          centerPadding: "15px",
+          slidesToShow: 2,
+        },
+      },
+
+      {
+        breakpoint: 480,
+        settings: {
+          centerMode: true,
+          arrows: false,
+          centerPadding: "15px",
+
           slidesToShow: 1,
         },
       },
@@ -134,7 +163,7 @@ function Home() {
           </Slider>
         </div>
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
