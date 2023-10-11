@@ -4,10 +4,12 @@ import Header from '../../components/header/Header'
 import { useLocation } from 'react-router-dom';
 import removeMovieByTitle from '../../components/RemoveFavoriteBtn';
 import FavoriteBtn from '../../components/FavoriteBtn';
+import Footer from '../../components/footer/Footer';
+
 
 function FilmView() {
 
-  // const [favouriteMovies, setFavouriteMovies] = useState([]);
+   // const [favouriteMovies, setFavouriteMovies] = useState([]);
   const location = useLocation()
   const movie = location.state
   console.log(movie);
@@ -24,7 +26,7 @@ function FilmView() {
     }
       // Anropa den inre funktionen getMovies för att hämta och uppdatera sparade filmer när komponenten renderas.
     getMovies();
-  }, []);
+  },[]);
 
 
     // Hantera klick på "Ta bort" knappen
@@ -59,6 +61,8 @@ function FilmView() {
          </div>
        </article>
      </section>
+     <Footer/>
+
       </>
      
         
