@@ -3,6 +3,7 @@
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: auto;
     background-color: #8A0404;
+
 }
 
 .filmView__article-left {

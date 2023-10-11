@@ -95,6 +95,7 @@ function Home() {
   function clickFilm(movie) {
     navigate("/Projektarbete-Grupp3/FilmView", { state: movie });
   }
+  console.log(trendingMovies);
 
   return (
     <div>
@@ -116,7 +117,7 @@ function Home() {
                   />
                   <p>Relaste date: {movie.year}</p>
                   <p>Rating: {movie.rating}</p>
-                  <h2>{movie.title}</h2>
+                  <h2  onClick={() => clickFilm(movie)}>{movie.title}</h2>
                   <button onClick={() => FavoriteBtn(movie)}>Save Movie</button>
                 </article>
               );
