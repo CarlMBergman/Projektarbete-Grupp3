@@ -1,9 +1,6 @@
 .favImg{
-    display: block;
-    margin: 0 auto;
     width: 300px;
     height: 450px;
-    object-fit: cover;
 }
 
 .favourite_article{
@@ -13,7 +10,10 @@
     align-items: center;
     text-align: center;
     gap: 1rem;
-    max-width: 400px;
+    max-width: 350px;
+    background-color: rgb(176, 27, 27);
+    box-shadow: -1px 2px 29px 0px rgba(0, 0, 0, 0.62);
+    padding: 20px 0;
 }
 
 @media only screen and (max-width: 350px) {
