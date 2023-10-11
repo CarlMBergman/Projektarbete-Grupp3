@@ -103,7 +103,7 @@ p {
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 280px) {
   .img {
     width: 200px;
     height: 300px;
@@ -111,6 +111,7 @@ p {
 
   .movie__card {
     max-width: 200px;
+    max-height: 500px;
   }
 
   .btn {
