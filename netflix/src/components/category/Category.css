@@ -20,18 +20,25 @@
     -webkit-transform: scale(1.04);
     -ms-transform: scale(1.04);
     transform: scale(1.04);
-  }
+}
 
-  @media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px){
     .category{
         min-width: 16rem;
         min-height: 22rem;
         font-size:x-large;
         line-height: 1.4rem;
     }
-  }
+}
 
-  @media only screen and (max-width: 280px){
+@media only screen and (max-width: 500px){
+    .category{
+        min-height: 18rem;
+        min-width: 13rem;
+    }
+}
+
+@media only screen and (max-width: 280px){
     .category{
         min-height: 20rem;
         min-width: 14rem;
