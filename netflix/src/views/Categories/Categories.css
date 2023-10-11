@@ -7,9 +7,17 @@
 .div--genre{
     display: flex;
     flex-direction: column;
-    text-align: center;
 }
 
 .div--genre__header{
-
+    color: rgb(255, 255, 255);
+    margin-left: 1.5rem;
 }
+
+.div--genre__hr{
+    border: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    margin: 1rem;
+}
+

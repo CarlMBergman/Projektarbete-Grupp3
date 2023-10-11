@@ -25,7 +25,7 @@ function Category(props) {
                 <article className='category__article'>
                     <img 
                     src={movie.thumbnail} 
-                    onError={(e) => e.target.alt = 'Image does not exist'} 
+                    onError={(e) => e.target.alt = 'error.jpg'} 
                     className='category__article__img'
                     />
                 </article>

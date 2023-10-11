@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Category } from '../../components/category/Category'
 import Header from '../../components/header/Header'
 import movies from '../../movies.json'
+import Footer from '../../components/footer/Footer'
 
 function Categories() {
     const comma = ', '
@@ -34,12 +35,13 @@ function Categories() {
         })
         
         return (
-            <div key={genre} className='div--genre'>
+            <div key={genre} className={'div--genre'}>
                 <header>
                     <h2 className='div--genre__header'>{genre}</h2>
                 </header>
                 <main>
                     <Category movies={moviesWithSameGenre} onClick={clickFilm}/>
+                    <hr className='div--genre__hr'/>
                 </main>
             </div>
         )
@@ -56,6 +58,9 @@ function Categories() {
             <main className="categories">
                 {category}
             </main>
+            <footer>
+                < Footer/>
+            </footer>
         </div>
     )
 }
