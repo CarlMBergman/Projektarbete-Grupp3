@@ -1,8 +1,12 @@
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from '@testing-library/user-event'
 import Header from "../components/header/Header";
-import { BrowserRouter } from "react-router-dom";
+import Home from "../views/Home/Home";
+import App from '../App'
+import { BrowserRouter, MemoryRouter, Route, Routes } from "react-router-dom";
+import FilmView from "../views/FilmView/FilmView";
+
 
 describe('testing our header', () => {
     it('should show header', () => {

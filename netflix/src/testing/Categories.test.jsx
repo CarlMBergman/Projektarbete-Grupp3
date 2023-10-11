@@ -21,3 +21,15 @@ describe('tests for categories', () => {
         expect(screen.getByText('Fight Club')).toBeInTheDocument()
     })
 })
+
+// describe('testing navigation on click', () => {
+
+//     it('should navigate to filmView', () => {
+//         const title = screen.findAllByTitle('The Godfather')
+//         await userEvent.click(title)
+//     })
+// })
+
+it('should navigate to filmView', () => {
+
+})
