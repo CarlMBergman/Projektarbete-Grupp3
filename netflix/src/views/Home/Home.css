@@ -1,9 +1,15 @@
+body {
+  background-color: #8a0404;
+  color: white;
+}
+
 .img {
   display: block;
   margin: 0 auto;
   width: 300px;
   height: 450px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .btn {
@@ -31,6 +37,18 @@
   text-align: center;
   height: 100%;
   max-width: 300px;
+  background-color: rgb(176, 27, 27);
+  box-shadow: -1px 2px 29px 0px rgba(0, 0, 0, 0.62);
+  margin: 40px 0;
+  transition: ease 0.3s;
+  height: 750px;
+  padding: 20px;
+}
+
+.movie__card:hover {
+  -webkit-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  transform: scale(1.04);
 }
 
 .trending__container {
@@ -50,4 +68,62 @@
 
 .movie__title {
   margin-top: 20px;
+}
+
+@media (max-width: 640px) {
+  .img {
+    width: 250px;
+    height: 375px;
+  }
+
+  .movie__card {
+    max-width: 250px;
+  }
+
+  .btn {
+    padding: 4px 10px;
+    font-size: 0.9rem;
+  }
+
+  .trending__title,
+  .recommended__title {
+    font-size: 1.2rem;
+    margin: 20px;
+  }
+
+  .release__year,
+  .rating,
+  .movie__title {
+    font-size: 0.9rem;
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .img {
+    width: 200px;
+    height: 300px;
+  }
+
+  .movie__card {
+    max-width: 200px;
+  }
+
+  .btn {
+    padding: 3px 8px;
+    font-size: 0.8rem;
+  }
+
+  .trending__title,
+  .recommended__title {
+    font-size: 1rem;
+    margin: 15px;
+  }
+
+  .release__year,
+  .rating,
+  .movie__title {
+    font-size: 0.8rem;
+    margin: 4px 0;
+  }
 }
