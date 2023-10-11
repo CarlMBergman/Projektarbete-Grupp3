@@ -1,10 +1,10 @@
 import FilmView from "../views/FilmView/FilmView";
 import Favourites from "../views/Favourites/Favourites";
 import Home from "../views/Home/Home";
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
 import { it, expect } from "vitest";
-import { BrowserRouter, MemoryRouter, Routes, Route } from "react-router-dom";
+import { MemoryRouter, Routes, Route } from "react-router-dom";
 
 
 it('should be able to click a movie', async () => {
