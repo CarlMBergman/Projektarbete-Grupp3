@@ -7,6 +7,7 @@ import FavoriteBtn from "../../components/FavoriteBtn";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import Footer from "../../components/footer/Footer";
 
 function Home() {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -160,6 +161,7 @@ function Home() {
           </div>
         </div>
       </main>
+      <Footer/>
     </div>
   );
 }
