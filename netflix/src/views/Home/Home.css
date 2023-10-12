@@ -103,7 +103,38 @@ p {
   }
 }
 
+@media (max-width: 480px) {
+  .img {
+    width: 220px;
+    height: 330px;
+  }
+
+  .movie__card {
+    max-width: 220px;
+    max-height: 500px;
+  }
+
+  .btn {
+    padding: 4px 10px;
+  }
+
+  .trending__title,
+  .recommended__title {
+    margin: 18px;
+  }
+
+  .release__year,
+  .rating,
+  .movie__title {
+    margin: 5px 0;
+  }
+}
+
 @media (max-width: 280px) {
+  body {
+    padding: 0 5px;
+  }
+
   .img {
     width: 200px;
     height: 300px;

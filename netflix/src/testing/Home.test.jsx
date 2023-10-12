@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
 import userEvent from "@testing-library/user-event";
 import Home from "../views/Home/Home";
@@ -28,6 +28,25 @@ describe("App", () => {
     await user.click(btn);
   });
 
+  test("Should be able to see 'remove movie' after saving a movie from trending", async () => {
+    //Tar bort alla filmer från sessionStorage
+    sessionStorage.clear();
+    render(<Home />, { wrapper: BrowserRouter });
+    const user = userEvent.setup();
+
+    //Slick carousel skapar flera element av samma element. För att kunna identifera en viss knapp så skickar vi med knappens index i knappens data-testid
+    //Här säger vi att vi vill klicka på dne första knappen i trending movies, som har index 0.
+    const buttons = screen.getAllByTestId("trending-save-btn-0");
+
+    expect(buttons).toHaveLength(2);
+
+    await user.click(buttons[0]);
+    console.log(buttons[0].textContent);
+
+    //Efter användaren har klickat på knappen så ska det knappens text ändras till "Remove Movie"
+    await waitFor(() => expect(buttons[0]).toHaveTextContent(/Remove Movie/));
+  });
+
   test("Should display recommended movies", () => {
     render(<Home />, { wrapper: BrowserRouter });
     expect(screen.getAllByText("Recommended for you")).toHaveLength(1);
@@ -44,5 +63,19 @@ describe("App", () => {
 
     const btn = buttons[0];
     await user.click(btn);
+  });
+
+  test("Should be able to see 'remove movie' after saving a movie from recommended", async () => {
+    sessionStorage.clear();
+    render(<Home />, { wrapper: BrowserRouter });
+    const user = userEvent.setup();
+    const buttons = screen.getAllByTestId("recommended-save-btn-0");
+
+    expect(buttons).toHaveLength(2);
+
+    await user.click(buttons[0]);
+    console.log(buttons[0].textContent);
+
+    await waitFor(() => expect(buttons[0]).toHaveTextContent(/Remove Movie/));
   });
 });
