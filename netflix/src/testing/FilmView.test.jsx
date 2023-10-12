@@ -6,6 +6,15 @@ import userEvent from '@testing-library/user-event'
 import { it, expect } from "vitest";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 
+/*
+-------------------------     INFORMATION OM TESTERNA    ----------------------------------------------
+ ---------------------------------------------------------------------------------------------------------------------
+ Våran Slider/Caroulsel renderar ut filmerna flera gånger därav måste vi ha hänsyn till det i testerna.
+ Så det är därför testerna kanske ser lite annorlunda ut.
+ Därför använder vi oss av getAllByText i våra tester.
+-----------------------------------------------------------------------------------------------------------------------
+*/
+
 
 it('should be able to click a movie', async () => {
   const entries = '/Projektarbete-Grupp3/'
